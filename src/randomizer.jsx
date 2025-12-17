@@ -12,11 +12,18 @@ export default function RandomPicker() {
   const pickRandom = () => {
     if (isPicking) return;
 
+    let options = [...COLORS];
+
+    const lastTwo = history.slice(-2);
+    if (lastTwo.length === 2 && lastTwo[0] === lastTwo[1]) {
+      options = options.filter((c) => c !== lastTwo[0]);
+    }
+
     setIsPicking(true);
     setCurrent(null);
 
     setTimeout(() => {
-      const choice = COLORS[Math.floor(Math.random() * COLORS.length)];
+      const choice = options[Math.floor(Math.random() * options.length)];
       setCurrent(choice);
       setHistory((prev) => [choice, ...prev]);
       setIsPicking(false);
