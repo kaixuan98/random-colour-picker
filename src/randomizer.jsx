@@ -14,7 +14,7 @@ export default function RandomPicker() {
 
     let options = [...COLORS];
 
-    const lastTwo = history.slice(-2);
+    const lastTwo = history.slice(0, 2);
     if (lastTwo.length === 2 && lastTwo[0] === lastTwo[1]) {
       options = options.filter((c) => c !== lastTwo[0]);
     }
@@ -110,6 +110,7 @@ export default function RandomPicker() {
         {/* Right Column (History) */}
         <div className="right">
           <div className="history-header">History</div>
+          <p>Selected Count: {history.length}</p>
           <button className="reset-button" onClick={resetHistory}>
             Reset History
           </button>
