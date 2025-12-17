@@ -2,7 +2,7 @@
   "name": "random-colour-picker",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://averychin7.github.io/random_project/random-colour-picker/",
+  "homepage": "https://averychin7.github.io/random-colour-picker",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
